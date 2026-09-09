@@ -400,83 +400,225 @@
         </div>
     </section>
 
-    const defaultPriceTables = [
-{
-    id: 'cat_pagar_min',
-    title: 'PAGAR MINIMALIS',
-    items: [
-        { name: 'Hollow Besi Biasa', spec: 'Jarak 10 - 8 cm', unit: 'm²', price: '375.000 - 400.000' },
-        { name: 'Hollow Besi Biasa', spec: 'Jarak 7 - 5 cm', unit: 'm²', price: '400.000 - 475.000' },
-        { name: 'Hollow Besi Biasa', spec: 'Jarak 4 - 3 cm', unit: 'm²', price: '575.000 - 600.000' },
-        { name: 'Hollow Galvanis (Anti Karat)', spec: 'Jarak 10 - 8 cm', unit: 'm²', price: '375.000 - 425.000' },
-        { name: 'Hollow Galvanis (Anti Karat)', spec: 'Jarak 7 - 5 cm', unit: 'm²', price: '425.000 - 525.000' },
-        { name: 'Hollow Galvanis (Anti Karat)', spec: 'Jarak 4 - 3 cm', unit: 'm²', price: '575.000 - 625.000' }
-    ]
-},
-{
-    title: 'PAGAR TEMPA & STAINLESS',
-    items: [
-        { name: 'Pagar Tempa Klasik Anti Karat', spec: 'Besi Tempa Solid', unit: 'm²', price: '700.000 - 1.750.000' },
-        { name: 'Pagar / Gerbang Stainless', spec: 'Material Stainless Steel', unit: 'm²', price: '1.250.000 - 2.050.000' }
-    ]
-},
-{
-    title: 'TRALIS JENDELA',
-    items: [
-        { name: 'Tralis Minimalis', spec: 'Ukuran 1 m - 30 cm', unit: 'Unit', price: '275.000 - 325.000' },
-        { name: 'Tralis Tempa', spec: 'Ukuran 1 m - 30 cm', unit: 'Unit', price: '325.000 - 425.000' }
-    ]
-},
-{
-    title: 'KANOPI',
-    items: [
-        { name: 'Kanopi Besi Biasa + Fiber', spec: 'Rangka Hollow 4x4', unit: 'm²', price: '325.000' },
-        { name: 'Kanopi Besi Biasa + Fiber', spec: 'Rangka Hollow 4x6', unit: 'm²', price: '375.000' },
-        { name: 'Kanopi Galvanis + Fiber No. 1', spec: 'Rangka Hollow 4x6', unit: 'm²', price: '500.000' },
-        { name: 'Kanopi Atap Alderon', spec: 'Rangka 4x6', unit: 'm²', price: '650.000' },
-        { name: 'Kanopi Atap Alderon', spec: 'Rangka 4x8', unit: 'm²', price: '800.000' },
-        { name: 'Kanopi Aluminium', spec: 'Rangka Aluminium', unit: 'm²', price: '400.000 - 625.000' },
-        { name: 'Kanopi Kaca', spec: 'Rangka Besi / Baja, Atap Kaca', unit: 'm²', price: '975.000 - 1.475.000' }
-    ]
-},
-{
-    title: 'RAILING TANGGA',
-    items: [
-        { name: 'Railing Tangga Lurus', spec: 'Besi Hollow / Minimalis', unit: 'Meter', price: '375.000 - 475.000' },
-        { name: 'Railing Tangga Putar', spec: 'Tinggi 4 Meter', unit: 'Unit', price: '3.525.000 - 4.525.000' },
-        { name: 'Balkon / Railing Stainless', spec: 'Material Stainless Steel', unit: 'Meter', price: '700.000 - 1.250.000' }
-    ]
-},
-{
-    title: 'PINTU BESI & GERBANG',
-    items: [
-        { name: 'Pintu Folding Gate', spec: 'Plat Besi / Galvalum', unit: 'm²', price: '550.000 - 850.000' },
-        { name: 'Pintu Henderson', spec: 'Plat Besi Tangguh', unit: 'm²', price: '850.000 - 1.550.000' },
-        { name: 'Pintu Besi Minimalis', spec: 'Model Minimalis', unit: 'Unit', price: '1.050.000 - 2.050.000' },
-        { name: 'Pintu Besi Standar', spec: 'Plat Besi Solid', unit: 'Unit', price: '1.550.000 - 2.550.000' },
-        { name: 'Pintu Rolling Door', spec: 'Standar Toko / Ruko', unit: 'm²', price: '400.000 - 450.000' }
-    ]
-},
-{
-    title: 'BAJA RINGAN & ALUMINIUM',
-    items: [
-        { name: 'Atap Baja Ringan', spec: 'Rangka + Atap', unit: 'm²', price: '225.000 - 300.000' },
-        { name: 'Kusen Aluminium', spec: 'Pemasangan Kusen', unit: 'Meter', price: '120.000 - 220.000' },
-        { name: 'Jendela Aluminium', spec: 'Termasuk Kaca', unit: 'Unit', price: '500.000 - 800.000' },
-        { name: 'Pintu Aluminium', spec: 'Pintu Full / Kaca', unit: 'Unit', price: '1.250.000 - 2.050.000' }
-    ]
-},
-{
-    title: 'PARTISI & INTERIOR',
-    items: [
-        { name: 'Partisi Gypsum', spec: 'Rangka metal stud lapis Gypsum double', unit: 'm²', price: '220.000 - 285.000' },
-        { name: 'Partisi HPL', spec: 'Rangka besi, lapis multipleks & HPL', unit: 'm²', price: '750.000 - 1.150.000' },
-        { name: 'Kitchen Set / Lemari', spec: 'Finishing HPL', unit: 'Meter', price: '1.800.000 - 3.050.000' },
-        { name: 'Finishing Kusen Melamik', spec: 'Pelitur / Melamik Kusen Kayu', unit: 'Meter', price: '95.000' },
-        { name: 'Pintu Kayu / Interior', spec: 'Ukuran Standar', unit: 'Unit', price: '350.000 - 550.000' }
-    ]
-}
-];
+   <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Harga Layanan Bengkel Las & Interior</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen pb-12">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-10 px-4 shadow-md">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Daftar Harga Layanan & Konstruksi</h1>
+            <p class="text-slate-300 text-sm md:text-base">Transparan, Berkualitas, dan Terjangkau</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 mt-8">
+        
+        <!-- Filter & Search Controls -->
+        <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-slate-200 mb-8 flex flex-col md:flex-row gap-4 justify-between items-center">
+            
+            <!-- Category Filter Dropdown -->
+            <div class="w-full md:w-1/3">
+                <label for="categoryFilter" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Filter Kategori</label>
+                <div class="relative">
+                    <select id="categoryFilter" class="w-full bg-slate-50 border border-slate-300 text-slate-700 py-2.5 px-3 pr-8 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium">
+                        <option value="all">Semua Kategori</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500">
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Input -->
+            <div class="w-full md:w-1/2">
+                <label for="searchInput" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Cari Item / Spesifikasi</label>
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Cari misal: Hollow, Alderon, Tempa..." class="w-full bg-slate-50 border border-slate-300 text-slate-700 py-2.5 pl-10 pr-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Table Container -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-100 text-slate-700 uppercase text-xs tracking-wider border-b border-slate-200">
+                            <th class="py-4 px-6 font-semibold">Kategori</th>
+                            <th class="py-4 px-6 font-semibold">Jenis Pekerjaan / Material</th>
+                            <th class="py-4 px-6 font-semibold">Ukuran / Spesifikasi</th>
+                            <th class="py-4 px-6 font-semibold text-right">Estimasi Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody id="priceTableBody" class="divide-y divide-slate-100 text-sm">
+                        <!-- Data dimasukkan secara dinamis oleh JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Empty State -->
+            <div id="noDataMessage" class="hidden text-center py-12 px-4">
+                <i class="fa-solid fa-box-open text-4xl text-slate-300 mb-3"></i>
+                <p class="text-slate-500 font-medium">Layanan yang Anda cari tidak ditemukan.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JavaScript logic -->
+    <script>
+        // Data Harga (Dinamis JSON Format)
+        const priceData = [
+            // Pagar Minimalis
+            { category: "Pagar Minimalis", item: "Pagar Hollow Besi Biasa", spec: "Jarak 10 – 8 cm", price: "Rp 375.000 – Rp 400.000" },
+            { category: "Pagar Minimalis", item: "Pagar Hollow Besi Biasa", spec: "Jarak 7 – 5 cm", price: "Rp 400.000 – Rp 475.000" },
+            { category: "Pagar Minimalis", item: "Pagar Hollow Besi Biasa", spec: "Jarak 4 – 3 cm", price: "Rp 575.000 – Rp 600.000" },
+            { category: "Pagar Minimalis", item: "Pagar Hollow Galvanis Anti Karat", spec: "Jarak 10 – 8 cm", price: "Rp 375.000 – Rp 425.000" },
+            { category: "Pagar Minimalis", item: "Pagar Hollow Galvanis Anti Karat", spec: "Jarak 7 – 5 cm", price: "Rp 425.000 – Rp 525.000" },
+            { category: "Pagar Minimalis", item: "Pagar Hollow Galvanis Anti Karat", spec: "Jarak 4 – 3 cm", price: "Rp 575.000 – Rp 625.000" },
+
+            // Pagar Tempa / Klasik
+            { category: "Pagar Tempa / Klasik", item: "Pagar Tempa Anti Karat", spec: "Ukuran Per meter", price: "Rp 700.000 – Rp 1.750.000" },
+
+            // Tralis
+            { category: "Tralis", item: "Tralis Minimalis", spec: "Ukuran 1 m – 30 cm", price: "Rp 275.000 – Rp 325.000" },
+            { category: "Tralis", item: "Tralis Tempa", spec: "Ukuran 1 m – 30 cm", price: "Rp 325.000 – Rp 425.000" },
+
+            // Canopy
+            { category: "Canopy", item: "Canopy Besi Biasa", spec: "Hollow 4 x 4 + Fiber", price: "Rp 325.000" },
+            { category: "Canopy", item: "Canopy Besi Biasa", spec: "Hollow 4 x 6 + Fiber", price: "Rp 375.000" },
+            { category: "Canopy", item: "Canopy Besi Galvanis", spec: "Hollow 4 x 6 & Fiber No.1", price: "Rp 500.000" },
+            { category: "Canopy", item: "Canopy Aluminium", spec: "Ukuran Per meter", price: "Rp 400.000 – Rp 625.000" },
+            { category: "Canopy", item: "Canopy Kaca", spec: "Ukuran Per meter", price: "Rp 975.000 – Rp 1.475.000" },
+
+            // Railing Tangga
+            { category: "Railing Tangga", item: "Railing Tangga Lurus", spec: "Ukuran Per meter", price: "Rp 375.000 – Rp 475.000" },
+            { category: "Railing Tangga", item: "Railing Tangga Putar", spec: "Ukuran Tinggi 4 Meter", price: "Rp 3.525.000 – Rp 4.525.000" },
+
+            // Pintu
+            { category: "Pintu", item: "Pintu Folding Gate", spec: "Ukuran Per Meter", price: "Rp 550.000 – Rp 850.000" },
+            { category: "Pintu", item: "Pintu Henderson", spec: "Ukuran Per Meter", price: "Rp 850.000 – Rp 1.550.000" },
+            { category: "Pintu", item: "Pintu Besi", spec: "Per Pintu", price: "Rp 1.550.000 – Rp 2.550.000" },
+            { category: "Pintu", item: "Pintu Besi Minimalis", spec: "Per Pintu", price: "Rp 1.050.000 – Rp 2.050.000" },
+            { category: "Pintu", item: "Pintu Rolling Door", spec: "Ukuran Per Meter", price: "Rp 400.000 – Rp 450.000" },
+            { category: "Pintu", item: "Finishing Pintu", spec: "Ukuran Per Meter / Unit", price: "Rp 350.000 – Rp 550.000" },
+
+            // Atap Baja Ringan
+            { category: "Atap Baja Ringan", item: "Atap Baja Ringan", spec: "Ukuran Per Meter", price: "Rp 225.000 – Rp 300.000" },
+
+            // Aluminium
+            { category: "Aluminium", item: "Kusen Aluminium", spec: "Ukuran Per Meter", price: "Rp 120.000 – Rp 220.000" },
+            { category: "Aluminium", item: "Jendela Aluminium", spec: "Per Unit", price: "Rp 500.000 – Rp 800.000" },
+            { category: "Aluminium", item: "Pintu Aluminium", spec: "Per Unit", price: "Rp 1.250.000 – Rp 2.050.000" },
+
+            // Partisi
+            { category: "Partisi", item: "Rangka Metal Stud Lapis Gypsum Double", spec: "Ukuran Per Meter", price: "Rp 220.000 – Rp 285.000" },
+            { category: "Partisi", item: "Rangka Besi, Lapis Multiplek & HPL", spec: "Ukuran Per Meter", price: "Rp 750.000 – Rp 1.150.000" },
+
+            // Kitchen Set / Interior
+            { category: "Kitchen Set & Furniture", item: "Kitchen Set / Lemari Finishing HPL", spec: "Ukuran Per Meter", price: "Rp 1.800.000 – Rp 3.050.000" },
+            { category: "Kitchen Set & Furniture", item: "Finishing Kusen Melamik", spec: "Ukuran Per Meter", price: "Rp 95.000" },
+
+            // Stainless
+            { category: "Stainless", item: "Balkon / Railing Stainless", spec: "Ukuran Per Meter", price: "Rp 700.000 – Rp 1.250.000" },
+            { category: "Stainless", item: "Pagar & Gerban/Pintu Stainless", spec: "Ukuran Per Meter", price: "Rp 1.250.000 – Rp 2.050.000" },
+
+            // Canopy Alderon
+            { category: "Canopy Alderon", item: "Atap Alderon Rangka 4x6", spec: "Per m2", price: "Rp 650.000" },
+            { category: "Canopy Alderon", item: "Atap Alderon Rangka 4x8", spec: "Per m2", price: "Rp 800.000" }
+        ];
+
+        // Element Referensi
+        const tableBody = document.getElementById('priceTableBody');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const searchInput = document.getElementById('searchInput');
+        const noDataMessage = document.getElementById('noDataMessage');
+
+        // Render Opsi Kategori Secara Dinamis
+        function populateCategories() {
+            const categories = [...new Set(priceData.map(item => item.category))];
+            categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat;
+                option.textContent = cat;
+                categoryFilter.appendChild(option);
+            });
+        }
+
+        // Render Data Tabel
+        function renderTable(data) {
+            tableBody.innerHTML = '';
+
+            if (data.length === 0) {
+                noDataMessage.classList.remove('hidden');
+                return;
+            } else {
+                noDataMessage.classList.add('hidden');
+            }
+
+            data.forEach((row, index) => {
+                const tr = document.createElement('tr');
+                tr.className = index % 2 === 0 ? 'bg-white hover:bg-slate-50 transition' : 'bg-slate-50/50 hover:bg-slate-100 transition';
+                
+                tr.innerHTML = `
+                    <td class="py-3.5 px-6 font-medium text-slate-500 whitespace-nowrap">
+                        <span class="inline-block bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-full font-semibold border border-slate-200">
+                            ${row.category}
+                        </span>
+                    </td>
+                    <td class="py-3.5 px-6 text-slate-800 font-semibold">${row.item}</td>
+                    <td class="py-3.5 px-6 text-slate-600">${row.spec}</td>
+                    <td class="py-3.5 px-6 text-right font-bold text-emerald-600 whitespace-nowrap">${row.price}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        // Fungsi Filter Data
+        function filterData() {
+            const selectedCategory = categoryFilter.value;
+            const searchKeyword = searchInput.value.toLowerCase().trim();
+
+            const filtered = priceData.filter(item => {
+                const matchCategory = (selectedCategory === 'all') || (item.category === selectedCategory);
+                const matchSearch = item.item.toLowerCase().includes(searchKeyword) || 
+                                    item.spec.toLowerCase().includes(searchKeyword) ||
+                                    item.category.toLowerCase().includes(searchKeyword);
+                
+                return matchCategory && matchSearch;
+            });
+
+            renderTable(filtered);
+        }
+
+        // Event Listeners
+        categoryFilter.addEventListener('change', filterData);
+        searchInput.addEventListener('input', filterData);
+
+        // Inisialisasi awal
+        populateCategories();
+        renderTable(priceData);
+    </script>
+</body>
+</html>
     
     <!-- FORMULIR CALON PELANGGAN (CRM) -->
     <section id="kontak" class="py-20 bg-slate-50">
