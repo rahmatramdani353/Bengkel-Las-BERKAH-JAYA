@@ -399,6 +399,84 @@
             </div>
         </div>
     </section>
+
+    const defaultPriceTables = [
+{
+    id: 'cat_pagar_min',
+    title: 'PAGAR MINIMALIS',
+    items: [
+        { name: 'Hollow Besi Biasa', spec: 'Jarak 10 - 8 cm', unit: 'm²', price: '375.000 - 400.000' },
+        { name: 'Hollow Besi Biasa', spec: 'Jarak 7 - 5 cm', unit: 'm²', price: '400.000 - 475.000' },
+        { name: 'Hollow Besi Biasa', spec: 'Jarak 4 - 3 cm', unit: 'm²', price: '575.000 - 600.000' },
+        { name: 'Hollow Galvanis (Anti Karat)', spec: 'Jarak 10 - 8 cm', unit: 'm²', price: '375.000 - 425.000' },
+        { name: 'Hollow Galvanis (Anti Karat)', spec: 'Jarak 7 - 5 cm', unit: 'm²', price: '425.000 - 525.000' },
+        { name: 'Hollow Galvanis (Anti Karat)', spec: 'Jarak 4 - 3 cm', unit: 'm²', price: '575.000 - 625.000' }
+    ]
+},
+{
+    title: 'PAGAR TEMPA & STAINLESS',
+    items: [
+        { name: 'Pagar Tempa Klasik Anti Karat', spec: 'Besi Tempa Solid', unit: 'm²', price: '700.000 - 1.750.000' },
+        { name: 'Pagar / Gerbang Stainless', spec: 'Material Stainless Steel', unit: 'm²', price: '1.250.000 - 2.050.000' }
+    ]
+},
+{
+    title: 'TRALIS JENDELA',
+    items: [
+        { name: 'Tralis Minimalis', spec: 'Ukuran 1 m - 30 cm', unit: 'Unit', price: '275.000 - 325.000' },
+        { name: 'Tralis Tempa', spec: 'Ukuran 1 m - 30 cm', unit: 'Unit', price: '325.000 - 425.000' }
+    ]
+},
+{
+    title: 'KANOPI',
+    items: [
+        { name: 'Kanopi Besi Biasa + Fiber', spec: 'Rangka Hollow 4x4', unit: 'm²', price: '325.000' },
+        { name: 'Kanopi Besi Biasa + Fiber', spec: 'Rangka Hollow 4x6', unit: 'm²', price: '375.000' },
+        { name: 'Kanopi Galvanis + Fiber No. 1', spec: 'Rangka Hollow 4x6', unit: 'm²', price: '500.000' },
+        { name: 'Kanopi Atap Alderon', spec: 'Rangka 4x6', unit: 'm²', price: '650.000' },
+        { name: 'Kanopi Atap Alderon', spec: 'Rangka 4x8', unit: 'm²', price: '800.000' },
+        { name: 'Kanopi Aluminium', spec: 'Rangka Aluminium', unit: 'm²', price: '400.000 - 625.000' },
+        { name: 'Kanopi Kaca', spec: 'Rangka Besi / Baja, Atap Kaca', unit: 'm²', price: '975.000 - 1.475.000' }
+    ]
+},
+{
+    title: 'RAILING TANGGA',
+    items: [
+        { name: 'Railing Tangga Lurus', spec: 'Besi Hollow / Minimalis', unit: 'Meter', price: '375.000 - 475.000' },
+        { name: 'Railing Tangga Putar', spec: 'Tinggi 4 Meter', unit: 'Unit', price: '3.525.000 - 4.525.000' },
+        { name: 'Balkon / Railing Stainless', spec: 'Material Stainless Steel', unit: 'Meter', price: '700.000 - 1.250.000' }
+    ]
+},
+{
+    title: 'PINTU BESI & GERBANG',
+    items: [
+        { name: 'Pintu Folding Gate', spec: 'Plat Besi / Galvalum', unit: 'm²', price: '550.000 - 850.000' },
+        { name: 'Pintu Henderson', spec: 'Plat Besi Tangguh', unit: 'm²', price: '850.000 - 1.550.000' },
+        { name: 'Pintu Besi Minimalis', spec: 'Model Minimalis', unit: 'Unit', price: '1.050.000 - 2.050.000' },
+        { name: 'Pintu Besi Standar', spec: 'Plat Besi Solid', unit: 'Unit', price: '1.550.000 - 2.550.000' },
+        { name: 'Pintu Rolling Door', spec: 'Standar Toko / Ruko', unit: 'm²', price: '400.000 - 450.000' }
+    ]
+},
+{
+    title: 'BAJA RINGAN & ALUMINIUM',
+    items: [
+        { name: 'Atap Baja Ringan', spec: 'Rangka + Atap', unit: 'm²', price: '225.000 - 300.000' },
+        { name: 'Kusen Aluminium', spec: 'Pemasangan Kusen', unit: 'Meter', price: '120.000 - 220.000' },
+        { name: 'Jendela Aluminium', spec: 'Termasuk Kaca', unit: 'Unit', price: '500.000 - 800.000' },
+        { name: 'Pintu Aluminium', spec: 'Pintu Full / Kaca', unit: 'Unit', price: '1.250.000 - 2.050.000' }
+    ]
+},
+{
+    title: 'PARTISI & INTERIOR',
+    items: [
+        { name: 'Partisi Gypsum', spec: 'Rangka metal stud lapis Gypsum double', unit: 'm²', price: '220.000 - 285.000' },
+        { name: 'Partisi HPL', spec: 'Rangka besi, lapis multipleks & HPL', unit: 'm²', price: '750.000 - 1.150.000' },
+        { name: 'Kitchen Set / Lemari', spec: 'Finishing HPL', unit: 'Meter', price: '1.800.000 - 3.050.000' },
+        { name: 'Finishing Kusen Melamik', spec: 'Pelitur / Melamik Kusen Kayu', unit: 'Meter', price: '95.000' },
+        { name: 'Pintu Kayu / Interior', spec: 'Ukuran Standar', unit: 'Unit', price: '350.000 - 550.000' }
+    ]
+}
+];
     
     <!-- FORMULIR CALON PELANGGAN (CRM) -->
     <section id="kontak" class="py-20 bg-slate-50">
