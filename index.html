@@ -400,7 +400,7 @@
         </div>
     </section>
 
-   <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -412,48 +412,53 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Menyembunyikan scrollbar untuk tampilan tab kategori yang rapi */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen pb-12">
 
     <!-- Header Section -->
-    <header class="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-10 px-4 shadow-md">
+    <header class="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-8 px-4 shadow-md">
         <div class="max-w-6xl mx-auto text-center">
-            <h1 class="text-3xl md:text-4xl font-bold mb-2">Daftar Harga Layanan & Konstruksi</h1>
-            <p class="text-slate-300 text-sm md:text-base">Transparan, Berkualitas, dan Terjangkau</p>
+            <h1 class="text-2xl md:text-4xl font-bold mb-2">Daftar Harga Layanan & Konstruksi</h1>
+            <p class="text-slate-300 text-xs md:text-sm">Transparan, Berkualitas, dan Terjangkau</p>
         </div>
     </header>
 
     <!-- Main Container -->
-    <main class="max-w-6xl mx-auto px-4 mt-8">
+    <main class="max-w-6xl mx-auto px-4 mt-6">
         
-        <!-- Filter & Search Controls -->
-        <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-slate-200 mb-8 flex flex-col md:flex-row gap-4 justify-between items-center">
-            
-            <!-- Category Filter Dropdown -->
-            <div class="w-full md:w-1/3">
-                <label for="categoryFilter" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Filter Kategori</label>
-                <div class="relative">
-                    <select id="categoryFilter" class="w-full bg-slate-50 border border-slate-300 text-slate-700 py-2.5 px-3 pr-8 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium">
-                        <option value="all">Semua Kategori</option>
-                    </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500">
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </div>
+        <!-- Search Input -->
+        <div class="mb-6">
+            <div class="relative max-w-md mx-auto md:mx-0">
+                <input type="text" id="searchInput" placeholder="Cari nama barang atau spesifikasi (misal: Alderon, Hollow)..." class="w-full bg-white border border-slate-300 text-slate-700 py-2.5 pl-10 pr-4 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
+        </div>
 
-            <!-- Search Input -->
-            <div class="w-full md:w-1/2">
-                <label for="searchInput" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Cari Item / Spesifikasi</label>
-                <div class="relative">
-                    <input type="text" id="searchInput" placeholder="Cari misal: Hollow, Alderon, Tempa..." class="w-full bg-slate-50 border border-slate-300 text-slate-700 py-2.5 pl-10 pr-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                </div>
+        <!-- Horizontal Category Tabs (Berderet Ke Samping) -->
+        <div class="mb-6">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Pilih Kategori:</span>
             </div>
-
+            <!-- Container Tab Berderet dengan Auto-Scroll -->
+            <div id="categoryTabs" class="flex gap-2 overflow-x-auto no-scrollbar py-1">
+                <!-- Tab 'Semua' (Default Selected) -->
+                <button onclick="selectCategory('all', this)" class="category-btn active border px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-blue-600 text-white border-blue-600 shadow-sm">
+                    Semua Kategori
+                </button>
+                <!-- Kategori lainnya akan dimasukkan lewat JavaScript -->
+            </div>
         </div>
 
         <!-- Table Container -->
@@ -485,7 +490,7 @@
 
     <!-- JavaScript logic -->
     <script>
-        // Data Harga (Dinamis JSON Format)
+        // Data Harga
         const priceData = [
             // Pagar Minimalis
             { category: "Pagar Minimalis", item: "Pagar Hollow Besi Biasa", spec: "Jarak 10 – 8 cm", price: "Rp 375.000 – Rp 400.000" },
@@ -496,7 +501,7 @@
             { category: "Pagar Minimalis", item: "Pagar Hollow Galvanis Anti Karat", spec: "Jarak 4 – 3 cm", price: "Rp 575.000 – Rp 625.000" },
 
             // Pagar Tempa / Klasik
-            { category: "Pagar Tempa / Klasik", item: "Pagar Tempa Anti Karat", spec: "Ukuran Per meter", price: "Rp 700.000 – Rp 1.750.000" },
+            { category: "Pagar Tempa", item: "Pagar Tempa Anti Karat", spec: "Ukuran Per meter", price: "Rp 700.000 – Rp 1.750.000" },
 
             // Tralis
             { category: "Tralis", item: "Tralis Minimalis", spec: "Ukuran 1 m – 30 cm", price: "Rp 275.000 – Rp 325.000" },
@@ -534,12 +539,12 @@
             { category: "Partisi", item: "Rangka Besi, Lapis Multiplek & HPL", spec: "Ukuran Per Meter", price: "Rp 750.000 – Rp 1.150.000" },
 
             // Kitchen Set / Interior
-            { category: "Kitchen Set & Furniture", item: "Kitchen Set / Lemari Finishing HPL", spec: "Ukuran Per Meter", price: "Rp 1.800.000 – Rp 3.050.000" },
-            { category: "Kitchen Set & Furniture", item: "Finishing Kusen Melamik", spec: "Ukuran Per Meter", price: "Rp 95.000" },
+            { category: "Kitchen Set & Interior", item: "Kitchen Set / Lemari Finishing HPL", spec: "Ukuran Per Meter", price: "Rp 1.800.000 – Rp 3.050.000" },
+            { category: "Kitchen Set & Interior", item: "Finishing Kusen Melamik", spec: "Ukuran Per Meter", price: "Rp 95.000" },
 
             // Stainless
             { category: "Stainless", item: "Balkon / Railing Stainless", spec: "Ukuran Per Meter", price: "Rp 700.000 – Rp 1.250.000" },
-            { category: "Stainless", item: "Pagar & Gerban/Pintu Stainless", spec: "Ukuran Per Meter", price: "Rp 1.250.000 – Rp 2.050.000" },
+            { category: "Stainless", item: "Pagar & Gerbang/Pintu Stainless", spec: "Ukuran Per Meter", price: "Rp 1.250.000 – Rp 2.050.000" },
 
             // Canopy Alderon
             { category: "Canopy Alderon", item: "Atap Alderon Rangka 4x6", spec: "Per m2", price: "Rp 650.000" },
@@ -548,22 +553,42 @@
 
         // Element Referensi
         const tableBody = document.getElementById('priceTableBody');
-        const categoryFilter = document.getElementById('categoryFilter');
+        const categoryTabs = document.getElementById('categoryTabs');
         const searchInput = document.getElementById('searchInput');
         const noDataMessage = document.getElementById('noDataMessage');
 
-        // Render Opsi Kategori Secara Dinamis
-        function populateCategories() {
+        let activeCategory = 'all';
+
+        // Render Tombol Kategori Berderet (Tabs)
+        function renderCategoryTabs() {
             const categories = [...new Set(priceData.map(item => item.category))];
+            
             categories.forEach(cat => {
-                const option = document.createElement('option');
-                option.value = cat;
-                option.textContent = cat;
-                categoryFilter.appendChild(option);
+                const btn = document.createElement('button');
+                btn.className = "category-btn border px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-slate-600 border-slate-200 hover:bg-slate-100 hover:text-slate-900";
+                btn.textContent = cat;
+                btn.onclick = () => selectCategory(cat, btn);
+                categoryTabs.appendChild(btn);
             });
         }
 
-        // Render Data Tabel
+        // Jalankan saat tombol kategori diklik
+        function selectCategory(cat, element) {
+            activeCategory = cat;
+
+            // Reset gaya semua tombol
+            const allBtns = categoryTabs.querySelectorAll('.category-btn');
+            allBtns.forEach(btn => {
+                btn.className = "category-btn border px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-white text-slate-600 border-slate-200 hover:bg-slate-100 hover:text-slate-900";
+            });
+
+            // Aktifkan gaya tombol yang diklik
+            element.className = "category-btn active border px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition bg-blue-600 text-white border-blue-600 shadow-sm";
+
+            filterData();
+        }
+
+        // Render Tabel Data
         function renderTable(data) {
             tableBody.innerHTML = '';
 
@@ -592,13 +617,12 @@
             });
         }
 
-        // Fungsi Filter Data
+        // Filtering gabungan (Kategori Tab & Search Input)
         function filterData() {
-            const selectedCategory = categoryFilter.value;
             const searchKeyword = searchInput.value.toLowerCase().trim();
 
             const filtered = priceData.filter(item => {
-                const matchCategory = (selectedCategory === 'all') || (item.category === selectedCategory);
+                const matchCategory = (activeCategory === 'all') || (item.category === activeCategory);
                 const matchSearch = item.item.toLowerCase().includes(searchKeyword) || 
                                     item.spec.toLowerCase().includes(searchKeyword) ||
                                     item.category.toLowerCase().includes(searchKeyword);
@@ -609,12 +633,11 @@
             renderTable(filtered);
         }
 
-        // Event Listeners
-        categoryFilter.addEventListener('change', filterData);
+        // Event Listener Pencarian
         searchInput.addEventListener('input', filterData);
 
         // Inisialisasi awal
-        populateCategories();
+        renderCategoryTabs();
         renderTable(priceData);
     </script>
 </body>
